@@ -41,6 +41,16 @@ body{
     height: 60px;
     margin-top: -13px;
     margin-right: -90px;
+    animation: turn infinite 30s linear;
+}
+
+@keyframes turn {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 #brand{
