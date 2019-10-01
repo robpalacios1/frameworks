@@ -53,7 +53,7 @@
 
             <h1 class="subheader">Formulario</h1>
 
-            <form>
+            <form class="mid-form">
                 <div class="form-group">
                     <label for="name">Nombre</label>
                     <input type="text" name="name">
@@ -69,11 +69,13 @@
                     <textarea name="bio"></textarea>
                 </div>
 
-                <br class="form-group">
+                <div class="form-group radibuttons">
                     <input type="radio" name="genero" value="hombre" /> Hombre
                     <input type="radio" name="genero" value="mujer" /> Mujer
                     <input type="radio" name="genero" value="otro" /> Otro
                 </div>
+
+                <div class="clearfix"></div>
 
                 <input type="submit" value="Enviar" class="btn btn-success">
             </form>
