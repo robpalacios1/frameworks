@@ -364,10 +364,20 @@ textarea{
     }
 }
 
+@media (max-width: 866px){
+    #logo{
+        width: 265px;
+    }
+
+    #menu{
+        width: auto;
+    }
+}
+
 @media (max-width: 797px){
     #logo{
         float: none;
-        width: 240px;
+        /*width: 240px;*/
         margin: 0px auto;
         margin-top: 20px;
     }
