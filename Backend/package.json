@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Api RESTful Javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robpalacios1/frameworks.git"
+  },
+  "author": "Roberto Palacios",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robpalacios1/frameworks/issues"
+  },
+  "homepage": "https://github.com/robpalacios1/frameworks#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-multiparty": "^2.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.5",
+    "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
