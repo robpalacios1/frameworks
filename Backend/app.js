@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // Cargar ficheros rutas
+var article_routes = require('./routes/article');
 
 // Middlewares
 app.use(bodyParser.urlencoded({extended: false}));
@@ -15,17 +16,9 @@ app.use(bodyParser.json());
 
 // CORS
 
-//Anadir prefijo a rutas
+//Anadir prefijo a rutas / cargar rutas
+app.use('/api', article_routes);
 
-//Ruta o metodo de prueba para la API REST
-app.get('/probando', (req, res) => {
-
-    return res.status(200).send({
-       curso: 'Master En Javascript',
-       autor: 'Roberto Palacios',
-       URL: "robpalacios1.github.io"
-    })
-});
 
 //Exportar modulo (fichero actual)
 module.exports = app;
