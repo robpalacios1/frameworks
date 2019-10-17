@@ -133,7 +133,56 @@ var controller = {
                 status: 'success',
                 article
             });
-        });
+        }); 
+    },
+
+    update: (req, res) => {
+        // Recorrer el id del articulo por la url
+        var articleId = req.params.id;
+
+        // Recorrer los datos que llegan por el put
+        var params = req.body;
+
+        // Validar datos
+        try{
+            var validate_title = !validator.isEmpty(params.title);
+            var validate_content = !validator.isEmpty(params.content);
+        }catch(err){
+            return res.status(200).send({
+                status: 'error',
+                message: 'Faltan datos por enviar'
+            });
+        }
+
+        if (validate_title && validate_content) {
+            // Find and Update
+            Article.findOneAndUpdate({_id: articleId}, params, {new: true}, (err, articleUpdate) =>{
+                if(err){
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al actualizar'
+                    });
+                }
+
+                if(!articleUpdate){
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No existe el articulo'
+                    });
+                }
+
+                return res.status(200).send({
+                    status: 'success',
+                    article: articleUpdate
+                });
+            });
+        }else{
+            // Devolver respuesta
+            return res.status(200).send({
+                status: 'error',
+                message: 'La validacion no es correcta'
+            });
+        }
     }
 }; // end controller
 
