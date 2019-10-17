@@ -183,6 +183,37 @@ var controller = {
                 message: 'La validacion no es correcta'
             });
         }
+    },
+
+    delete: (req, res) => {
+        // Recorrer el id de la url
+        var articleId = req.params.id;
+        //Find and  delete
+        Article.findOneAndDelete({_id: articleId}, (err, articleRemoved) => {
+            if(err) {
+                return res.status(500).send({
+                    status: 'error',
+                    message: 'Error al borrar'
+                });
+            }
+
+            if(!articleRemoved) {
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'No se ha borrado el articulo, posiblemente no existe'
+                });
+            }
+
+            return res.status(200).send({
+                status: 'success',
+                article: articleRemoved
+            });
+        });
+
+        return res.status(200).send({
+            status: 'error',
+            message: 'La validacion no es correcta'
+        });
     }
 }; // end controller
 
