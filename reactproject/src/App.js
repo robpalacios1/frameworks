@@ -5,8 +5,8 @@ import './assets/css/App.css';
 // Importar Componentes
 import MiComponente from './components/MiComponente';
 import Peliculas from './components/Peliculas'
-import header from './components/Header'
-import Header from './components/Header';
+import Header from './components/Header'
+import Slider from './components/Slider';
 
 function HolaMundo(nombre,edad){
   var presentacion = (
@@ -24,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Slider />
 
 
       <header className="App-header">
