@@ -7,6 +7,7 @@ import MiComponente from './components/MiComponente';
 import Peliculas from './components/Peliculas'
 import Header from './components/Header'
 import Slider from './components/Slider';
+import Sidebar from './components/Sidebar';
 
 function HolaMundo(nombre,edad){
   var presentacion = (
@@ -25,19 +26,24 @@ function App() {
     <div className="App">
       <Header />
       <Slider />
+        <div className="center">
+          <section id="content">
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>
+              Hola bienvenido al curso de react de Roberto Palacios!!
+              </p>
 
+              {HolaMundo(nombre,12)}
 
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hola bienvenido al curso de react de Roberto Palacios!!
-        </p>
-          {HolaMundo(nombre,12)}
-          <section className="componentes">
-            <MiComponente />
-            <Peliculas />
+              <section className="componentes">
+                <MiComponente />
+                <Peliculas />
+              </section>
           </section>
-        </header>
+
+            <Sidebar />
+
+        </div>
     </div>
   );
 }
