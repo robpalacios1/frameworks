@@ -9,6 +9,7 @@ import MiComponente from './components/MiComponente';
 import Peliculas from './components/Peliculas';
 import Error from './components/Error';
 import Home from './components/Home';
+import Blog from './components/Blog';
 
 
 
@@ -19,15 +20,13 @@ class Router extends Component {
 
                 <Header />
 
-                
-
                 <Switch>
 
                 {/* CONFIGURAR RUTAS Y PAGINAS */}
 
                     <Route exact path="/" component={Home} />
                     <Route exact path="/home" component={Home} />
-                    <Route exact path="/ruta-prueba" component={SeccionPruebas} />
+                    <Route exact path="/blog" component={Blog} />
                     <Route exact path="/segunda-ruta" component={MiComponente} />
 
                     <Route exact path ="/pagina-1" render={() => (
